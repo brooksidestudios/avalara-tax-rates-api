@@ -100,7 +100,7 @@ class TaxRatesApi
      * @param string $apiKey 
      * @return void
      */
-    public function setApiKey($apiKey)
+    private function setApiKey($apiKey)
     {
         $this->_apikey = $apiKey;
     }
@@ -108,9 +108,9 @@ class TaxRatesApi
     /**
      * API key getter
      *
-     * @return void
+     * @return string Api Key
      */
-    public function getApiKey()
+    private function getApiKey()
     {
         return $this->_apikey;
     }
@@ -118,9 +118,9 @@ class TaxRatesApi
     /**
      * Available actions getter
      *
-     * @return void
+     * @return array
      */
-    public function getActions()
+    private function getActions()
     {
         return $this->_actions;
     }
@@ -131,7 +131,7 @@ class TaxRatesApi
      * @param array $params 
      * @return string
      */
-    protected function getActionFromParams($params = array())
+    private function getActionFromParams($params = array())
     {
         foreach ($this->_params as $param) {
             if ( ! isset($params[$param])) {
@@ -149,7 +149,7 @@ class TaxRatesApi
      * @param array $params 
      * @return boolean
      */
-    protected function hasRequiredParamsForAction($action, $params)
+    private function hasRequiredParamsForAction($action, $params)
     {
         if ($action == 'address') {
             foreach ($this->_params as $param) {
@@ -174,7 +174,7 @@ class TaxRatesApi
      * @return array
      * @throws Exception
      */
-    protected function _makeCall($action, $params = array())
+    private function _makeCall($action, $params = array())
     {
         if ( ! isset($this->_apikey)) {
             throw new Exception('Invalid api key');
