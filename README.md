@@ -37,7 +37,7 @@ $rates = $tr->getRates(array(
 
 ## Results
 
-Results will vary depending on location, but you will always be returned with an array with two keys: `totalRate` and `rates`. Rates can contain up to three rates – for city, state, and county.
+Results will vary depending on location, but you will always be returned with an array with two keys: `totalRate` and `rates`. The `rates` key will contain up to three rates – for city, state, and county.
 
 Example result:
 
