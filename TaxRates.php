@@ -1,4 +1,5 @@
 <?php
+namespace Brookside\TaxRates;
 
 /**
  * Avalara Tax Rates API Wrapper
@@ -8,7 +9,7 @@
  * @version   1.0.0
  * @license   http://www.opensource.org/licenses/mit-license.php MIT License
  */
-class TaxRatesApi
+class TaxRates
 {
     
     /**
@@ -63,7 +64,7 @@ class TaxRatesApi
         if (isset($apiKey)) {
             $this->setApiKey($apiKey);
         } else {
-            throw new Exception('Missing API key');
+            throw new \Exception('Missing API key');
         }
     }
     
@@ -88,7 +89,7 @@ class TaxRatesApi
         $action = (isset($action) && in_array($action, $this->getActions()) ? $action : $this->getActionFromParams($params));
         
         if ( ! $this->hasRequiredParamsForAction($action, $params)) {
-            throw new Exception('You are missing one or more required parameters.');
+            throw new \Exception('You are missing one or more required parameters.');
         }
         
         return $this->_makeCall($action, $params);
@@ -177,7 +178,7 @@ class TaxRatesApi
     private function _makeCall($action, $params = array())
     {
         if ( ! isset($this->_apikey)) {
-            throw new Exception('Invalid api key');
+            throw new \Exception('Invalid api key');
         }
         
         $authMethod = '?apikey=' . urlencode($this->getApiKey());
@@ -200,7 +201,7 @@ class TaxRatesApi
         $jsonData = curl_exec($ch);
         
         if (curl_errno($ch) || ! $jsonData) {
-            throw new Exception('Error: _makeCall() - cURL error: ' . curl_error($ch));
+            throw new \Exception('Error: _makeCall() - cURL error: ' . curl_error($ch));
         }
         
         $info = curl_getinfo($ch);
@@ -228,7 +229,7 @@ class TaxRatesApi
                     break;
             }
             
-            throw new Exception($error);
+            throw new \Exception($error);
         }
         
         curl_close($ch);
