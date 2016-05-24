@@ -1,0 +1,24 @@
+{
+    "name": "brookside/avalara-tax-rates-api",
+    "type": "library",
+    "description": "Simple PHP wrapper for Avalara's Tax Rates API",
+    "keywords": ["avalara", "tax", "tax-rates"],
+    "homepage": "https://github.com/brooksidestudios/avalara-tax-rates-api",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Cornell Campbell",
+            "email": "ccampbell@brooksidestudios.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+        "ext-curl": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Brookside\\TaxRates\\": ""
+        }
+    }
+}
