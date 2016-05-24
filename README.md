@@ -3,15 +3,23 @@ Avalara Tax Rates API Wrapper
 
 A simple PHP wrapper for Avalara’s free sales tax rates API.
 
+## Install
+
+Using [Composer](http://getcomposer.org/):
+
+`composer require brookside/avalara-tax-rates-api:dev-master`
+
+or just require the `TaxRates.php` file:
+
+```php
+require 'path/to/TaxRates.php';
+```
+
 ## Usage
 
 > **Note:** You will need to have signed up for an Avalara developer account and API key. More information [can be found at taxratesapi.avalara.com](http://taxratesapi.avalara.com).
 
-Require the class and instantiate the TaxRates object
-
 ```php
-require 'path/to/TaxRates.php';
-
 use Brookside\TaxRates\TaxRates;
 
 $tr = new TaxRates('YOUR_AVALARA_API_KEY');
