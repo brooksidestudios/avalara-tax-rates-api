@@ -7,7 +7,9 @@ A simple PHP wrapper for Avalara’s free sales tax rates API.
 
 Using [Composer](http://getcomposer.org/):
 
-`composer require brookside/avalara-tax-rates-api:dev-master`
+```
+composer require brookside/avalara-tax-rates-api:dev-master
+```
 
 or just require the `TaxRates.php` file:
 
