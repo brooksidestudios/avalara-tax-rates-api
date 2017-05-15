@@ -78,7 +78,7 @@ class TaxRates
      */
     public function getRates($params = array(), $action = null)
     {
-        if (is_string($params)) {
+        if (is_string($params) || is_numeric($params)) {
             $params = array('postal' => $params);
         }
 
@@ -192,11 +192,14 @@ class TaxRates
         $apiCall = self::API_URL . $action . $authMethod . $paramString;
 
         $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, $apiCall);
-        curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 20);
-        curl_setopt($ch, CURLOPT_TIMEOUT, 90);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+
+        curl_setopt_array($ch, [
+            CURLOPT_URL            => $apiCall,
+            CURLOPT_CONNECTTIMEOUT => 20,
+            CURLOPT_TIMEOUT        => 90,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_SSL_VERIFYPEER => false,
+        ]);
 
         $jsonData = curl_exec($ch);
 
