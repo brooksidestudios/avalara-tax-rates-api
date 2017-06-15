@@ -2,7 +2,7 @@
     "name": "brookside/avalara-tax-rates-api",
     "type": "library",
     "description": "Simple PHP wrapper for Avalara's Tax Rates API",
-    "keywords": ["avalara", "tax", "tax-rates"],
+    "keywords": ["avalara", "tax", "tax-rates", "avatax"],
     "homepage": "https://github.com/brooksidestudios/avalara-tax-rates-api",
     "license": "MIT",
     "authors": [
